@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: manifest-server-deployment
+  labels:
+    app: manifest-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: manifest-server
+  template:
+    metadata:
+      labels:
+        app: manifest-server
+    spec:
+      containers:
+      - name: manifest-server
+        image: csams/manifest-server
+        command: ["/opt/manifest-server/boot.sh"]
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080

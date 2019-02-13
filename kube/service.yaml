@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: manifest-service
+spec:
+  selector:
+    app: manifest-server
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8080

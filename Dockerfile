@@ -11,4 +11,3 @@ RUN cd /opt/manifest-server && \
     source bin/activate && \
     pip install -U pip && \
     pip install -e .
-EXPOSE 8080
